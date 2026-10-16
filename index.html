@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10111b">
+  <meta name="description" content="A Small Board. Big Strategy. Play a stylish two-player Tic Tac Toe game and learn the rules.">
+  <title>Gridmate — A Small Board. Big Strategy.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="is-loading">
+  <div class="intro-screen" id="intro-screen" role="status" aria-label="Gridmate is getting the game ready">
+    <div class="intro-nebula intro-nebula-one" aria-hidden="true"></div>
+    <div class="intro-nebula intro-nebula-two" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit-one" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit-two" aria-hidden="true"></div>
+
+    <div class="intro-content">
+      <div class="intro-brand-mark" aria-hidden="true">
+        <span class="intro-cell intro-x">×</span><span class="intro-cell"></span><span class="intro-cell intro-o">○</span>
+        <span class="intro-cell"></span><span class="intro-cell intro-x">×</span><span class="intro-cell"></span>
+        <span class="intro-cell intro-o">○</span><span class="intro-cell"></span><span class="intro-cell intro-x">×</span>
+      </div>
+      <p class="intro-kicker"><span class="live-dot"></span> GRIDMATE GAME STUDIO</p>
+      <h2 class="intro-title">THINK FAST.<br><span>PLAY SMART.</span></h2>
+      <p class="intro-caption">SETTING UP THE BATTLEFIELD</p>
+      <div class="intro-progress" aria-hidden="true"><span></span></div>
+    </div>
+
+    <button class="intro-skip" id="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+    <span class="intro-corner intro-corner-left" aria-hidden="true">X / O</span>
+    <span class="intro-corner intro-corner-right" aria-hidden="true">3 × 3 GRID</span>
+  </div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="topbar app-shell">
+    <a class="brand" href="#home" aria-label="Gridmate home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>gridmate<span class="brand-dot">.</span></span>
+    </a>
+    <a class="nav-play" href="#game">LET'S PLAY <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-enter"><span class="live-dot"></span> THE CLASSIC, REIMAGINED</p>
+        <h1 id="hero-title" class="hero-enter" aria-label="A Small Board. Big Strategy.">A Small Board.<br><span class="typed-line" id="typed-line" aria-hidden="true"></span><span class="typing-cursor" aria-hidden="true"></span></h1>
+        <p class="hero-copy hero-enter">Two players. Nine squares. One shot at outsmarting your friend.<br class="desktop-break"> Ready to make your move?</p>
+        <div class="hero-actions hero-enter">
+          <a class="hero-cta" href="#game">Jump into the game <span aria-hidden="true">↘</span></a>
+          <a class="hero-secondary" href="#rules">Learn the rules first</a>
+        </div>
+        <div class="hero-meta hero-enter"><span>01 — STRATEGY</span><span>02 — FRIENDLY RIVALRY</span><span>03 — ONE WINNER</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-mark floating-x">×</div>
+        <div class="floating-mark floating-o">○</div>
+        <div class="mini-board">
+          <span class="mini-cell mini-x">×</span><span class="mini-cell"></span><span class="mini-cell mini-o">○</span>
+          <span class="mini-cell"></span><span class="mini-cell mini-x">×</span><span class="mini-cell"></span>
+          <span class="mini-cell mini-o">○</span><span class="mini-cell"></span><span class="mini-cell mini-x">×</span>
+        </div>
+        <span class="art-caption">THINK AHEAD <span>✳</span></span>
+      </div>
+      <a class="scroll-cue" href="#game"><span class="scroll-line"></span><span>SCROLL TO PLAY</span><span class="scroll-arrow">↓</span></a>
+    </section>
+
+    <section class="rules-section" id="rules" aria-labelledby="rules-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">NEW TO THE GRID?</p>
+          <h2 id="rules-title">Three rules.<br><span>No excuses.</span></h2>
+          <p>Easy to learn. Surprisingly easy to lose at.</p>
+        </div>
+        <div class="rules-grid">
+          <article class="rule-card reveal"><span class="rule-number">01</span><div class="rule-symbol rule-symbol-x">×</div><h3>Take turns</h3><p>Player X starts. Player O follows. Choose one empty square each turn.</p></article>
+          <article class="rule-card reveal"><span class="rule-number">02</span><div class="rule-symbol rule-symbol-o">○</div><h3>Make a line</h3><p>Get three of your marks in one row, one column, or a diagonal.</p></article>
+          <article class="rule-card reveal"><span class="rule-number">03</span><div class="rule-symbol rule-symbol-draw">＝</div><h3>Block or draw</h3><p>Stop your opponent from completing a line. If all nine squares fill with no winner, it’s a draw.</p></article>
+        </div>
+        <div class="rules-bottom reveal"><p>Got the idea?</p><a href="#game" class="hero-cta">Your turn <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="play-section section-shell" id="game" aria-labelledby="game-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">YOUR MOVE, YOUR STRATEGY</p>
+        <h2 id="game-title">Let's settle this<span>.</span></h2>
+        <p>Play face-to-face on the same screen. Winner gets bragging rights.</p>
+      </div>
+
+      <section class="game-card reveal" aria-label="Tic Tac Toe game">
+        <div class="game-card-head">
+          <div>
+            <p class="section-kicker">THE BATTLEFIELD</p>
+            <h3>Make your move</h3>
+          </div>
+          <button class="icon-button" id="reset-game" type="button" title="Restart round" aria-label="Restart round">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4.8 9A7.5 7.5 0 0 1 18 6.5L20 12M4 17v-5h5m10.2 3A7.5 7.5 0 0 1 6 17.5L4 12"/></svg>
+          </button>
+        </div>
+
+        <div class="turn-banner" id="turn-banner" role="status" aria-live="polite">
+          <span class="turn-symbol x-symbol" id="turn-symbol">X</span>
+          <span class="turn-text" id="turn-text">Player X's turn</span>
+          <span class="turn-pill" id="turn-pill">YOUR MOVE</span>
+        </div>
+
+        <div class="game-toolbar" aria-label="Game tools">
+          <button class="tool-button" id="sound-toggle" type="button" aria-pressed="false" title="Turn sound effects on or off">
+            <span class="tool-icon" aria-hidden="true">♫</span><span id="sound-label">Sound off</span>
+          </button>
+          <button class="tool-button tool-button-hint" id="hint-button" type="button" title="Get a strategic suggestion">
+            <span class="tool-icon" aria-hidden="true">✦</span><span>Strategy hint</span>
+          </button>
+          <span class="move-count" id="move-count" aria-live="polite">0 / 9 MOVES</span>
+        </div>
+        <div class="move-track" aria-hidden="true"><span id="move-progress"></span></div>
+        <p class="hint-feedback" id="hint-feedback" role="status" aria-live="polite">Need a nudge? Try Strategy hint.</p>
+
+        <div class="board" id="board" role="group" aria-label="Tic Tac Toe board">
+          <button class="cell" type="button" data-index="0" aria-label="Row 1, column 1, empty"></button>
+          <button class="cell" type="button" data-index="1" aria-label="Row 1, column 2, empty"></button>
+          <button class="cell" type="button" data-index="2" aria-label="Row 1, column 3, empty"></button>
+          <button class="cell" type="button" data-index="3" aria-label="Row 2, column 1, empty"></button>
+          <button class="cell" type="button" data-index="4" aria-label="Row 2, column 2, empty"></button>
+          <button class="cell" type="button" data-index="5" aria-label="Row 2, column 3, empty"></button>
+          <button class="cell" type="button" data-index="6" aria-label="Row 3, column 1, empty"></button>
+          <button class="cell" type="button" data-index="7" aria-label="Row 3, column 2, empty"></button>
+          <button class="cell" type="button" data-index="8" aria-label="Row 3, column 3, empty"></button>
+        </div>
+
+        <div class="scoreboard" aria-label="Scoreboard">
+          <div class="score score-x"><div class="score-heading"><span class="mini-mark">X</span><span>PLAYER X</span></div><strong id="score-x" aria-label="Player X wins">0</strong><span class="score-label">WINS</span></div>
+          <div class="score score-draw"><div class="score-heading"><span class="draw-mark" aria-hidden="true">＝</span><span>DRAWS</span></div><strong id="score-draw" aria-label="Draws">0</strong><span class="score-label">TIED ROUNDS</span></div>
+          <div class="score score-o"><div class="score-heading"><span class="mini-mark">O</span><span>PLAYER O</span></div><strong id="score-o" aria-label="Player O wins">0</strong><span class="score-label">WINS</span></div>
+        </div>
+
+        <div class="game-actions">
+          <button class="primary-button" id="play-again" type="button">Play again <span aria-hidden="true">↗</span></button>
+          <button class="text-button" id="reset-scores" type="button">Reset scores</button>
+        </div>
+      </section>
+      <p class="play-note reveal"><span class="note-dot"></span> LOCAL MULTIPLAYER <span class="note-divider">/</span> NO SIGN-IN <span class="note-divider">/</span> JUST LOGIC</p>
+    </section>
+
+    
+  </main>
+
+  <div class="winner-modal" id="winner-modal" hidden aria-hidden="true">
+    <div class="winner-backdrop" data-dismiss-winner="true"></div>
+    <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+    <section class="winner-dialog" role="dialog" aria-modal="true" aria-labelledby="winner-title" aria-describedby="winner-message" tabindex="-1">
+      <button class="winner-close" id="winner-close" type="button" aria-label="Close result popup">×</button>
+      <div class="winner-orbit winner-orbit-one" aria-hidden="true"></div>
+      <div class="winner-orbit winner-orbit-two" aria-hidden="true"></div>
+      <div class="winner-badge" id="winner-badge" aria-hidden="true">X</div>
+      <p class="winner-kicker" id="winner-kicker">ROUND COMPLETE</p>
+      <h2 id="winner-title">Player X wins!</h2>
+      <p class="winner-message" id="winner-message">Three in a row. Beautifully played.</p>
+      <div class="winner-result-meta"><span id="winner-move-summary">5 MOVES PLAYED</span><span class="result-divider">·</span><span id="winner-score-summary">X 1 — 0 O</span></div>
+      <button class="primary-button winner-next" id="modal-next-round" type="button">Play next round <span aria-hidden="true">↗</span></button>
+      <button class="text-button winner-back-button" id="modal-back" type="button">Back to the board</button>
+    </section>
+  </div>
+
+  <footer class="footer app-shell"><span>GRIDMATE © <span id="year">2026</span></span><span>MADE FOR FRIENDLY COMPETITION</span><a href="#home">BACK TO TOP ↑</a></footer>
+</body>
+</html>
